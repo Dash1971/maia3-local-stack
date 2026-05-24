@@ -22,6 +22,8 @@ Engine path after setup:
 ~/chess/maia3-engine/maia3-engine.sh
 ```
 
+On Linux, the setup path uses the CPU-only PyTorch index on purpose so the install stays sane on machines that are not using CUDA.
+
 The second command starts the UCI engine. In a GUI, use the same launcher path instead of starting it manually.
 
 ## Opening books
@@ -38,6 +40,6 @@ Books are written under:
 
 ## Current limits
 
-- This first pass uses the upstream Maia 3 UCI engine directly.
+- This first pass installs Maia3 from the upstream GitHub repo and uses the upstream Maia 3 UCI engine directly.
 - `BookFile` and `HumanTime` compatibility features are not wired in yet.
 - En Croissant walkthrough details will be expanded after live validation.

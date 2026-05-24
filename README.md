@@ -7,7 +7,7 @@ Run Maia 3 locally as a human-like UCI chess engine, with En Croissant integrati
 This repository is the clean Maia 3 successor to the earlier Maia 2 local-stack project.
 
 Current scope:
-- install Maia 3 in a local venv
+- install Maia 3 in a local venv from the upstream GitHub repo
 - launch Maia 3 through a small local wrapper script
 - build Polyglot opening books from Lichess data
 - document Linux and Apple Silicon macOS setup
@@ -28,6 +28,8 @@ chmod +x *.sh
 
 That creates a local install under `~/chess/maia3-engine/` and prints the engine path to use in your GUI.
 
+On Linux, `setup-maia3.sh` deliberately installs the CPU-only PyTorch build to avoid dragging in a multi-gigabyte CUDA stack on non-GPU systems.
+
 To build opening books:
 
 ```bash
@@ -47,6 +49,7 @@ To build opening books:
 ## Notes
 
 - Default model is currently `maia3-23m` for a balance of quality and runtime cost.
+- The setup script installs Maia3 from the upstream GitHub repository, not from PyPI.
 - The first engine run downloads the chosen checkpoint from Hugging Face and reuses the local cache after that.
 - This first pass intentionally keeps the architecture simple: upstream Maia 3 engine first, extra compatibility features later.
 

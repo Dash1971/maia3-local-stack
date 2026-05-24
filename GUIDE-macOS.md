@@ -26,6 +26,8 @@ Engine path after setup:
 
 By default the launcher prefers `mps` on macOS.
 
+The setup script installs Maia3 from the upstream GitHub repo into a local venv.
+
 ## Opening books
 
 ```bash
