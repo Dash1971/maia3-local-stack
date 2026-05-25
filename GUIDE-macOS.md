@@ -43,5 +43,5 @@ Books are written under:
 ## Current limits
 
 - En Croissant installation is still manual.
-- `BookFile` and `HumanTime` compatibility features are not wired in yet.
+- `BookFile` and `HumanTime` are provided by the local wrapper.
 - This guide will expand once the end-to-end macOS path is validated live.

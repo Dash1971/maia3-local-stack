@@ -40,6 +40,6 @@ Books are written under:
 
 ## Current limits
 
-- This first pass installs Maia3 from the upstream GitHub repo and uses the upstream Maia 3 UCI engine directly.
-- `BookFile` and `HumanTime` compatibility features are not wired in yet.
+- This first pass installs Maia3 from the upstream GitHub repo and uses a thin local wrapper over the upstream engine.
+- `BookFile` and `HumanTime` are available through the wrapper.
 - En Croissant walkthrough details will be expanded after live validation.

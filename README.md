@@ -8,7 +8,7 @@ This repository is the clean Maia 3 successor to the earlier Maia 2 local-stack 
 
 Current scope:
 - install Maia 3 in a local venv from the upstream GitHub repo
-- launch Maia 3 through a small local wrapper script
+- launch Maia 3 through a thin compatibility wrapper with optional opening-book and HumanTime support
 - build Polyglot opening books from Lichess data
 - document Linux and Apple Silicon macOS setup
 
@@ -41,7 +41,8 @@ To build opening books:
 | File | Purpose |
 |---|---|
 | `setup-maia3.sh` | Create a local Maia 3 environment and install a launcher |
-| `maia3-engine.sh` | Thin launcher around upstream `maia3-uci` |
+| `maia3-engine.sh` | Thin launcher for the local wrapper |
+| `maia3_wrapper.py` | UCI compatibility layer adding `BookFile` and `HumanTime` |
 | `build-books.sh` | Build Polyglot opening books from Lichess archives |
 | `GUIDE.md` | Linux setup notes |
 | `GUIDE-macOS.md` | Apple Silicon macOS setup notes |
@@ -50,8 +51,9 @@ To build opening books:
 
 - Default model is currently `maia3-23m` for a balance of quality and runtime cost.
 - The setup script installs Maia3 from the upstream GitHub repository, not from PyPI.
+- The local wrapper adds `BookFile` and `HumanTime` while keeping upstream Maia3 as the underlying move picker.
 - The first engine run downloads the chosen checkpoint from Hugging Face and reuses the local cache after that.
-- This first pass intentionally keeps the architecture simple: upstream Maia 3 engine first, extra compatibility features later.
+- The wrapper is intentionally thin: upstream Maia3 stays authoritative for model behavior.
 
 ## License
 

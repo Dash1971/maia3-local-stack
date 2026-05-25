@@ -33,4 +33,4 @@ if [[ "$USE_UCI_HISTORY" == "1" ]]; then
   ARGS+=(--use-uci-history)
 fi
 
-exec python -m maia3.uci "${ARGS[@]}" "$@"
+exec python "$ENGINE_HOME/maia3_wrapper.py" "${ARGS[@]}" "$@"
