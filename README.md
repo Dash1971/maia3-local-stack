@@ -52,6 +52,7 @@ To build opening books:
 - Default model is currently `maia3-23m` for a balance of quality and runtime cost.
 - The setup script installs Maia3 from the upstream GitHub repository, not from PyPI.
 - The local wrapper adds `BookFile` and `HumanTime` while keeping upstream Maia3 as the underlying move picker.
+- `BookFile` has been smoke-tested with a deterministic Polyglot fixture from the starting position.
 - The first engine run downloads the chosen checkpoint from Hugging Face and reuses the local cache after that.
 - The wrapper is intentionally thin: upstream Maia3 stays authoritative for model behavior.
 
