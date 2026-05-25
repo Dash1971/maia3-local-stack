@@ -3,7 +3,7 @@ set -euo pipefail
 
 ENGINE_HOME="${ENGINE_HOME:-$HOME/chess/maia3-engine}"
 VENV_DIR="$ENGINE_HOME/venv"
-MODEL_ALIAS="${MAIA3_MODEL:-maia3-23m}"
+MODEL_ALIAS="${MAIA3_MODEL:-maia3-79m}"
 DEVICE="${MAIA3_DEVICE:-auto}"
 USE_UCI_HISTORY="${MAIA3_USE_UCI_HISTORY:-1}"
 

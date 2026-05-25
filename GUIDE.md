@@ -88,9 +88,11 @@ Open **Engines** and add **three engines**.
 - **HumanTime:** `true`
 
 Recommended starting point:
-- model default stays `maia3-23m`
+- model default stays `maia3-79m`
 - keep `Temperature=1.0`
 - keep `TopP=1.0`
+
+If you need a lighter fallback later, launch with `MAIA3_MODEL=maia3-23m`.
 
 ### Engine 2: Maia 3 Analysis
 

@@ -53,7 +53,8 @@ For the exact En Croissant setup flow, use:
 
 ## Notes
 
-- Default model is currently `maia3-23m` for a balance of quality and runtime cost.
+- Default model is currently `maia3-79m`.
+- If you want a lighter fallback, set `MAIA3_MODEL=maia3-23m` before launching or running setup.
 - The setup script installs Maia3 from the upstream GitHub repository, not from PyPI.
 - The local wrapper adds `BookFile` and `HumanTime` while keeping upstream Maia3 as the underlying move picker.
 - `BookFile` has been smoke-tested with a deterministic Polyglot fixture from the starting position.

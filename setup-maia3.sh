@@ -6,7 +6,7 @@ ENGINE_HOME="$HOME/chess/maia3-engine"
 VENV_DIR="$ENGINE_HOME/venv"
 LAUNCHER_DEST="$ENGINE_HOME/maia3-engine.sh"
 WRAPPER_DEST="$ENGINE_HOME/maia3_wrapper.py"
-DEFAULT_MODEL="${MAIA3_MODEL:-maia3-23m}"
+DEFAULT_MODEL="${MAIA3_MODEL:-maia3-79m}"
 MAIA3_GIT_URL="${MAIA3_GIT_URL:-https://github.com/CSSLab/maia3.git}"
 CPU_TORCH_INDEX_URL="${CPU_TORCH_INDEX_URL:-https://download.pytorch.org/whl/cpu}"
 
