@@ -13,9 +13,9 @@ Current scope:
 - document Linux and Apple Silicon macOS setup
 
 Planned next:
-- optional wrapper layer for `BookFile` / `HumanTime`
-- fuller En Croissant walkthrough
 - calibration guidance after live testing
+- optional installer polish / post-install smoke test
+- more GUI screenshots once the end-to-end flow is exercised visually
 
 ## Quick start
 
@@ -35,6 +35,10 @@ To build opening books:
 ```bash
 ./build-books.sh
 ```
+
+For the exact En Croissant setup flow, use:
+- [GUIDE.md](GUIDE.md) for Linux
+- [GUIDE-macOS.md](GUIDE-macOS.md) for Apple Silicon macOS
 
 ## Files
 
