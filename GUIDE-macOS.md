@@ -59,6 +59,10 @@ Open the `.dmg`, drag En Croissant to Applications, and allow it through macOS s
 
 ## 4. Build opening books
 
+This step is optional. Maia3 can play without an opening book; leave `BookFile`
+blank if you want upstream Maia3 to choose every move directly. Use a book when
+you want the opening phase to follow locally generated Lichess-based human games.
+
 ```bash
 ./build-books.sh
 ```
@@ -99,7 +103,9 @@ Open **Engines** and add **three engines**.
 - **BookFile:** `/Users/YOUR_USERNAME/chess/books/lichess_1600_all.bin`
 - **HumanTime:** `true`
 
-Use the full absolute path for `BookFile`, not `~`.
+`BookFile` is optional. Leave it blank for pure Maia3 play without a local
+opening book. If you use a book, enter the full absolute path for `BookFile`,
+not `~`.
 
 Recommended starting point:
 - model default stays `maia3-79m`
@@ -151,7 +157,7 @@ Set both the same. The lower UCI option is the real one.
 
 ### For playing
 Use **Maia 3** with:
-- `BookFile` set
+- `BookFile` set, or blank for no opening book
 - `HumanTime=true`
 - your target ELO
 

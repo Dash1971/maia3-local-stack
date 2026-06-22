@@ -36,6 +36,29 @@ To build opening books:
 ./build-books.sh
 ```
 
+Opening books are optional. Maia3 can play directly from the position without a
+book; `BookFile` is there when you want a local Polyglot book to steer the
+opening phase toward rating/time-control-specific human games.
+
+Quick verification after setup:
+
+```bash
+~/chess/maia3-engine/maia3-engine.sh --list-models
+printf 'uci\nisready\nquit\n' | ~/chess/maia3-engine/maia3-engine.sh
+```
+
+Deterministic wrapper/book fixture check:
+
+```bash
+~/chess/maia3-engine/venv/bin/python tests/generate_startpos_book.py
+printf 'uci\nsetoption name BookFile value %s\nposition startpos\ngo\nquit\n' \
+  "$PWD/tests/fixtures/startpos-e2e4.bin" | ~/chess/maia3-engine/maia3-engine.sh
+```
+
+That fixture path should emit both:
+- `info string book move`
+- `bestmove e2e4`
+
 For the exact En Croissant setup flow, use:
 - [GUIDE.md](GUIDE.md) for Linux
 - [GUIDE-macOS.md](GUIDE-macOS.md) for Apple Silicon macOS
@@ -60,6 +83,7 @@ For the exact En Croissant setup flow, use:
 - `BookFile` has been smoke-tested with a deterministic Polyglot fixture from the starting position.
 - The first engine run downloads the chosen checkpoint from Hugging Face and reuses the local cache after that.
 - The wrapper is intentionally thin: upstream Maia3 stays authoritative for model behavior.
+- `tests/generate_startpos_book.py` is easiest to run with the installed engine venv Python, since that environment already has `python-chess`.
 
 ## License
 

@@ -42,6 +42,10 @@ First run will be slower because Maia3 downloads and caches the chosen Hugging F
 
 ## 2. Build opening books
 
+This step is optional. Maia3 can play without an opening book; leave `BookFile`
+blank if you want upstream Maia3 to choose every move directly. Use a book when
+you want the opening phase to follow locally generated Lichess-based human games.
+
 ```bash
 ./build-books.sh
 ```
@@ -87,6 +91,9 @@ Open **Engines** and add **three engines**.
 - **BookFile:** `/home/<your-username>/chess/books/lichess_1600_all.bin` (or your chosen book)
 - **HumanTime:** `true`
 
+`BookFile` is optional. Leave it blank for pure Maia3 play without a local
+opening book.
+
 Recommended starting point:
 - model default stays `maia3-79m`
 - keep `Temperature=1.0`
@@ -121,7 +128,7 @@ Set both the same. The lower UCI option is the one that actually matters.
 
 ### For playing
 Use **Maia 3** with:
-- `BookFile` set
+- `BookFile` set, or blank for no opening book
 - `HumanTime=true`
 - your chosen ELO
 
