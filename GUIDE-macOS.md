@@ -155,6 +155,9 @@ Set both the same. The lower UCI option is the real one.
 
 ## 6. Suggested setup pattern
 
+En Croissant engine entries are profiles. They may point to the same
+`maia3-engine.sh` binary while carrying different per-entry UCI settings.
+
 ### For playing
 Use **Maia 3** with:
 - `BookFile` set, or blank for no opening book
@@ -163,6 +166,8 @@ Use **Maia 3** with:
 
 ### For analysis
 Use **Maia 3 Analysis** with:
+- the same binary path
+- the same ELO, if you want analysis recommendations at the same target strength
 - `BookFile` blank
 - `HumanTime=false`
 

@@ -80,6 +80,12 @@ For the exact En Croissant setup flow, use:
 - If you want a lighter fallback, set `MAIA3_MODEL=maia3-23m` before launching or running setup.
 - The setup script installs Maia3 from the upstream GitHub repository, not from PyPI.
 - The local wrapper adds `BookFile` and `HumanTime` while keeping upstream Maia3 as the underlying move picker.
+- In En Croissant, you can create multiple engine entries that point to the
+  same `maia3-engine.sh` launcher. Treat each entry as a separate profile:
+  customize its UCI options independently. A common setup is one Maia3 profile
+  for play with your target `Elo`, a matching opening `BookFile`, and
+  `HumanTime=true`; and a second Maia3 analysis profile at the same `Elo` with
+  `HumanTime=false` so recommended moves appear without the artificial delay.
 - `BookFile` has been smoke-tested with a deterministic Polyglot fixture from the starting position.
 - The first engine run downloads the chosen checkpoint from Hugging Face and reuses the local cache after that.
 - The wrapper is intentionally thin: upstream Maia3 stays authoritative for model behavior.
