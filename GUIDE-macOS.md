@@ -68,8 +68,12 @@ cd ~
 git clone https://github.com/Dash1971/chess-opening-book-builder.git
 cd chess-opening-book-builder
 chmod +x build-books.sh
-./build-books.sh
+./build-books.sh --preset maia3-1600-rapid
 ```
+
+The preset uses rating 1600, Rapid, a ±50 rating band, at least 25 games per
+emitted position, a 40-ply cap, and a maximum 200-point player rating gap.
+Run `./build-books.sh --help` for other ratings, speeds, months, and thresholds.
 
 Books are written to:
 
@@ -77,10 +81,11 @@ Books are written to:
 ~/chess/books/
 ```
 
-Example outputs:
-- `lichess_1400_all.bin`
-- `lichess_1600_rapid.bin`
-- `lichess_1800_blitz_rapid.bin`
+Preset outputs:
+- `lichess_1600_rapid_2024-01.bin`
+- `lichess_1600_rapid_2024-01.json` (build provenance)
+
+The archive prefix is retained for reuse unless you pass `--clean`.
 
 ### Optional speedup with PyPy
 
@@ -104,7 +109,7 @@ Open **Engines** and add **three engines**.
   - `~/chess/maia3-engine/maia3-engine.sh`
 - **Depth:** `1`
 - **ELO:** your target strength
-- **BookFile:** `/Users/YOUR_USERNAME/chess/books/lichess_1600_all.bin`
+- **BookFile:** `/Users/YOUR_USERNAME/chess/books/lichess_1600_rapid_2024-01.bin`
 - **HumanTime:** `true`
 
 `BookFile` is optional. Leave it blank for pure Maia3 play without a local

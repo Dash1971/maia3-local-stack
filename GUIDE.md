@@ -51,14 +51,12 @@ cd ~
 git clone https://github.com/Dash1971/chess-opening-book-builder.git
 cd chess-opening-book-builder
 chmod +x build-books.sh
-./build-books.sh
+./build-books.sh --preset maia3-1600-rapid
 ```
 
-The builder asks for:
-1. target rating(s)
-2. time control bucket
-3. download size
-4. Lichess archive month
+The preset uses rating 1600, Rapid, a ±50 rating band, at least 25 games per
+emitted position, a 40-ply cap, and a maximum 200-point player rating gap.
+Run `./build-books.sh --help` for other ratings, speeds, months, and thresholds.
 
 Output books are written to:
 
@@ -66,10 +64,11 @@ Output books are written to:
 ~/chess/books/
 ```
 
-Typical filenames:
-- `lichess_1400_all.bin`
-- `lichess_1600_rapid.bin`
-- `lichess_1800_blitz_rapid.bin`
+Preset outputs:
+- `lichess_1600_rapid_2024-01.bin`
+- `lichess_1600_rapid_2024-01.json` (build provenance)
+
+The archive prefix is retained for reuse unless you pass `--clean`.
 
 ### Faster with PyPy
 
@@ -92,7 +91,7 @@ Open **Engines** and add **three engines**.
 - **Path:** `/home/<your-username>/chess/maia3-engine/maia3-engine.sh`
 - **Depth:** `1`
 - **ELO:** your target strength
-- **BookFile:** `/home/<your-username>/chess/books/lichess_1600_all.bin` (or your chosen book)
+- **BookFile:** `/home/<your-username>/chess/books/lichess_1600_rapid_2024-01.bin` (or your generated book)
 - **HumanTime:** `true`
 
 `BookFile` is optional. Leave it blank for pure Maia3 play without a local
@@ -221,9 +220,8 @@ The selected Lichess month is not available yet. Pick another month or check:
 │   ├── maia3_wrapper.py
 │   └── venv/
 └── books/
-    ├── lichess_1400_all.bin
-    ├── lichess_1600_all.bin
-    └── lichess_1800_all.bin
+    ├── lichess_1600_rapid_2024-01.bin
+    └── lichess_1600_rapid_2024-01.json
 ```
 
 At that point, the Linux path is ready for real GUI use.

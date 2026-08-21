@@ -37,8 +37,12 @@ To build optional opening books, use the standalone
 git clone https://github.com/Dash1971/chess-opening-book-builder.git
 cd chess-opening-book-builder
 chmod +x build-books.sh
-./build-books.sh
+./build-books.sh --preset maia3-1600-rapid
 ```
+
+That preset writes `lichess_1600_rapid_2024-01.bin` plus a matching JSON
+provenance sidecar under `~/chess/books/`. Run `./build-books.sh --help` for
+other ratings, speeds, months, and thresholds.
 
 Opening books are optional. Maia3 can play directly from the position without a
 book; `BookFile` is there when you want a local Polyglot book to steer the
