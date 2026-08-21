@@ -47,6 +47,10 @@ blank if you want upstream Maia3 to choose every move directly. Use a book when
 you want the opening phase to follow locally generated Lichess-based human games.
 
 ```bash
+cd ~
+git clone https://github.com/Dash1971/chess-opening-book-builder.git
+cd chess-opening-book-builder
+chmod +x build-books.sh
 ./build-books.sh
 ```
 
@@ -74,7 +78,7 @@ sudo apt install pypy3
 pypy3 -m pip install chess --break-system-packages
 ```
 
-`build-books.sh` auto-detects PyPy if available.
+The standalone builder auto-detects PyPy if available.
 
 ---
 
@@ -201,7 +205,7 @@ info string book move
 
 Use the separate **Maia 3 Analysis** engine with `HumanTime=false`.
 
-### `build-books.sh` fails with 404
+### The book builder fails with 404
 
 The selected Lichess month is not available yet. Pick another month or check:
 - <https://database.lichess.org>

@@ -9,7 +9,7 @@ This repository is the clean Maia 3 successor to the earlier Maia 2 local-stack 
 Current scope:
 - install Maia 3 in a local venv from the upstream GitHub repo
 - launch Maia 3 through a thin compatibility wrapper with optional opening-book and HumanTime support
-- build Polyglot opening books from Lichess data
+- use optional Polyglot books from the standalone Chess Opening Book Builder
 - document Linux and Apple Silicon macOS setup
 
 Planned next:
@@ -30,9 +30,13 @@ That creates a local install under `~/chess/maia3-engine/` and prints the engine
 
 On Linux, `setup-maia3.sh` deliberately installs the CPU-only PyTorch build to avoid dragging in a multi-gigabyte CUDA stack on non-GPU systems.
 
-To build opening books:
+To build optional opening books, use the standalone
+[Chess Opening Book Builder](https://github.com/Dash1971/chess-opening-book-builder):
 
 ```bash
+git clone https://github.com/Dash1971/chess-opening-book-builder.git
+cd chess-opening-book-builder
+chmod +x build-books.sh
 ./build-books.sh
 ```
 
@@ -70,7 +74,6 @@ For the exact En Croissant setup flow, use:
 | `setup-maia3.sh` | Create a local Maia 3 environment and install a launcher |
 | `maia3-engine.sh` | Thin launcher for the local wrapper |
 | `maia3_wrapper.py` | UCI compatibility layer adding `BookFile` and `HumanTime` |
-| `build-books.sh` | Build Polyglot opening books from Lichess archives |
 | `GUIDE.md` | Linux setup notes |
 | `GUIDE-macOS.md` | Apple Silicon macOS setup notes |
 

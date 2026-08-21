@@ -64,6 +64,10 @@ blank if you want upstream Maia3 to choose every move directly. Use a book when
 you want the opening phase to follow locally generated Lichess-based human games.
 
 ```bash
+cd ~
+git clone https://github.com/Dash1971/chess-opening-book-builder.git
+cd chess-opening-book-builder
+chmod +x build-books.sh
 ./build-books.sh
 ```
 
@@ -85,7 +89,7 @@ brew install pypy3
 pypy3 -m pip install chess
 ```
 
-`build-books.sh` uses PyPy automatically if it finds it.
+The standalone builder uses PyPy automatically if it finds it.
 
 ---
 
