@@ -4,7 +4,8 @@ Run Maia 3 locally as a human-like UCI chess engine, with En Croissant integrati
 
 ## Status
 
-This repository is the clean Maia 3 successor to the earlier Maia 2 local-stack project.
+This repository is the clean Maia 3 successor to the earlier
+[Maia 2 local-stack project](https://github.com/Dash1971/maia2-local-stack).
 
 Current scope:
 - install Maia 3 in a local venv from the upstream GitHub repo
@@ -52,18 +53,6 @@ Quick verification after setup:
 ~/chess/maia3-engine/maia3-engine.sh --list-models
 printf 'uci\nisready\nquit\n' | ~/chess/maia3-engine/maia3-engine.sh
 ```
-
-Deterministic wrapper/book fixture check:
-
-```bash
-~/chess/maia3-engine/venv/bin/python tests/generate_startpos_book.py
-printf 'uci\nsetoption name BookFile value %s\nposition startpos\ngo\nquit\n' \
-  "$PWD/tests/fixtures/startpos-e2e4.bin" | ~/chess/maia3-engine/maia3-engine.sh
-```
-
-That fixture path should emit both:
-- `info string book move`
-- `bestmove e2e4`
 
 For the exact En Croissant setup flow, use:
 - [GUIDE.md](GUIDE.md) for Linux
