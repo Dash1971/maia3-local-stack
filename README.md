@@ -176,6 +176,13 @@ and [Chessformer paper, Section 4](https://arxiv.org/html/2605.19091v1#S4).
 - The wrapper is intentionally thin: upstream Maia3 stays authoritative for model behavior.
 - `tests/generate_startpos_book.py` is easiest to run with the installed engine venv Python, since that environment already has `python-chess`.
 
+## Credits
+
+- **[Maia 3](https://www.maiachess.com/)** by CSSLab, University of Toronto — the neural network that makes this possible
+- **[En Croissant](https://encroissant.org/)** by Francisco Salgueiro — the GUI
+- **[Lichess](https://lichess.org/)** — the game database (released under CC0)
+- **[python-chess](https://python-chess.readthedocs.io/)** — board representation, Zobrist hashing, and Polyglot reading
+
 ## License
 
 MIT for repository code and scripts. Maia 3 model weights and upstream engine code have their own licenses; see the upstream CSSLab repository and Hugging Face model pages.
