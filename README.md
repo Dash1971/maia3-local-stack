@@ -149,6 +149,10 @@ use your actual match results to choose a useful training level.
 Sources: [official Maia3 UCI options](https://github.com/CSSLab/maia3#uci-options)
 and [Chessformer paper, Section 4](https://arxiv.org/html/2605.19091v1#S4).
 
+For community observations, developer explanations, and public-bot rating
+snapshots, see [Maia ratings on Discord: evidence for a flattened strength
+scale](docs/maia3-elo-discord-evidence.md).
+
 ## Files
 
 | File | Purpose |
